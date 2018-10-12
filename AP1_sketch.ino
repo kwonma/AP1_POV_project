@@ -2,7 +2,15 @@
 // put period variable here
 int period = 1000;  // milliseconds
 // put static 2D array of
-int arr[7][7] = { {}, {}, {}, {}, {}, {}, {}};
+int arr[7][7] = { {0,62,73,73,46,0}, //G
+                  {0,0,65,127,75,0,0}, //I
+                  {0,127,32,16,32,127,0}, //M
+                  {0,127,32,16,32,127,0}, //M
+                  {0,0,65,127,75,0,0}, //I
+                  {0,62,65,65,65,0,0}, //C
+                  {0,127,8,20,34,65,0} //K
+                };  
+
 
 // assign digital pins for LEDs;
 int row0 = 4;
