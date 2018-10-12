@@ -26,13 +26,13 @@ void setup() {
   Serial.println(increment);  // debugging purposes
 
   //assign pins to be output
-  pinMode(row0, INPUT);
-  pinMode(row1, INPUT);
-  pinMode(row2, INPUT);
-  pinMode(row3, INPUT);
-  pinMode(row4, INPUT);
-  pinMode(row5, INPUT);
-  pinMode(row6, INPUT);
+  pinMode(row0, OUTPUT);
+  pinMode(row1, OUTPUT);
+  pinMode(row2, OUTPUT);
+  pinMode(row3, OUTPUT);
+  pinMode(row4, OUTPUT);
+  pinMode(row5, OUTPUT);
+  pinMode(row6, OUTPUT);
 }
 
 void loop() {
