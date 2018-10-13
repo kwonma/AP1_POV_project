@@ -70,7 +70,14 @@ void loop() {
     // go through the 2d array to get each row (7) of pixels
     // one value in the array represents the whole jth row
     for (int j = 0; j < 7; j++) {
-
+      int val = arr[i][j];
+      digitalWrite(row0, HIGH && (val & B0000001));
+      digitalWrite(row1, HIGH && (val & B0000010));
+      digitalWrite(row2, HIGH && (val & B0000100));
+      digitalWrite(row3, HIGH && (val & B0001000));
+      digitalWrite(row4, HIGH && (val & B0010000));
+      digitalWrite(row5, HIGH && (val & B0100000));
+      digitalWrite(row6, HIGH && (val & B1000000));
     }
     delay(increment);
   }
