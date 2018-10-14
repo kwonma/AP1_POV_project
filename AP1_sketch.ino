@@ -3,7 +3,7 @@
 int period = 10000;  // milliseconds
 // put static 2D array of
 int arr[7][7] = { {0, 62, 73, 73, 46, 0}, //G
-  {0, 0, 65, 127, 75, 0, 0}, //I
+  {0, 0, 65, 127, 65, 0, 0}, //I
   {0, 127, 32, 16, 32, 127, 0}, //M
   {0, 127, 32, 16, 32, 127, 0}, //M
   {0, 0, 65, 127, 75, 0, 0}, //I
@@ -21,7 +21,7 @@ int row4 = 8;
 int row5 = 9;
 int row6 = 10;
 
-unsigned long increment =  (period / (49.0 * 2.0)); // delay increment
+unsigned long increment =  (period/ (49*7)); // delay increment
 
 
 void setup() {
@@ -55,43 +55,22 @@ void loop() {
     // one value in the array represents the whole jth row
     for (int j = 0; j < 7; j++) {
       int val = arr[i][j];
-      if (val & B0000001)
-        digitalWrite(row0, HIGH);
-      else
-        digitalWrite(row0, LOW);
-      if (val & B0000010)
-        digitalWrite(row1, HIGH);
-      else
-        digitalWrite(row1, LOW);
-      if (val & B0000100)
-        digitalWrite(row2, HIGH);
-      else
-        digitalWrite(row2, LOW);
-      if (val & B0001000)
-        digitalWrite(row3, HIGH);
-      else
-        digitalWrite(row3, LOW);
-      if (val & B0010000)
-        digitalWrite(row4, HIGH);
-      else
-        digitalWrite(row4, LOW);
-      if (val & B0100000)
-        digitalWrite(row5, HIGH);
-      else
-        digitalWrite(row5, LOW);
-      if (val & B1000000)
-        digitalWrite(row6, HIGH);
-      else
-        digitalWrite(row6, LOW);
-      Serial.print(HIGH && (val & B0000001));
-      Serial.print(HIGH && (val & B0000010));
-      Serial.print(HIGH && (val & B0000100));
-      Serial.print(HIGH && (val & B0001000));
-      Serial.print(HIGH && (val & B0010000));
-      Serial.print(HIGH && (val & B0100000));
-      Serial.println(HIGH && (val & B1000000));
+      digitalWrite(row0, HIGH && (val & B0000001));
+      digitalWrite(row1, HIGH && (val & B0000010));
+      digitalWrite(row2, HIGH && (val & B0000100));
+      digitalWrite(row3, HIGH && (val & B0001000));
+      digitalWrite(row4, HIGH && (val & B0010000));
+      digitalWrite(row5, HIGH && (val & B0100000));
+      digitalWrite(row6, HIGH && (val & B1000000));
+      //Serial.print(HIGH && (val & B0000001));
+      //Serial.print(HIGH && (val & B0000010));
+      //Serial.print(HIGH && (val & B0000100));
+      //Serial.print(HIGH && (val & B0001000));
+      //Serial.print(HIGH && (val & B0010000));
+      //Serial.print(HIGH && (val & B0100000));
+      //Serial.println(HIGH && (val & B1000000));
+      delay(increment);
     }
-    delay(increment);
   }
 
   // print the message backwards (second swipe):
@@ -101,43 +80,15 @@ void loop() {
     // one value in the array represents the whole jth row
     for (int j = 6; j >= 0; j--) {
       int val = arr[i][j];
-      if (val & B0000001)
-        digitalWrite(row0, HIGH);
-      else
-        digitalWrite(row0, LOW);
-      if (val & B0000010)
-        digitalWrite(row1, HIGH);
-      else
-        digitalWrite(row1, LOW);
-      if (val & B0000100)
-        digitalWrite(row2, HIGH);
-      else
-        digitalWrite(row2, LOW);
-      if (val & B0001000)
-        digitalWrite(row3, HIGH);
-      else
-        digitalWrite(row3, LOW);
-      if (val & B0010000)
-        digitalWrite(row4, HIGH);
-      else
-        digitalWrite(row4, LOW);
-      if (val & B0100000)
-        digitalWrite(row5, HIGH);
-      else
-        digitalWrite(row5, LOW);
-      if (val & B1000000)
-        digitalWrite(row6, HIGH);
-      else
-        digitalWrite(row6, LOW);
-      //digitalWrite(row0, (val & B0000001));
-      //digitalWrite(row1, (val & B0000010));
-      //digitalWrite(row2, (val & B0000100));
-      //digitalWrite(row3, (val & B0001000));
-      //digitalWrite(row4, (val & B0010000));
-      //digitalWrite(row5, (val & B0100000));
-      //digitalWrite(row6, (val & B1000000));
+      digitalWrite(row0, HIGH && (val & B0000001));
+      digitalWrite(row1, HIGH && (val & B0000010));
+      digitalWrite(row2, HIGH && (val & B0000100));
+      digitalWrite(row3, HIGH && (val & B0001000));
+      digitalWrite(row4, HIGH && (val & B0010000));
+      digitalWrite(row5, HIGH && (val & B0100000));
+      digitalWrite(row6, HIGH && (val & B1000000));
+      delay(increment);
     }
-    delay(increment);
   }
 }
 
