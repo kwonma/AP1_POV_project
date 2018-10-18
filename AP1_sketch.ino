@@ -72,6 +72,7 @@ void loop() {
       delay(increment);
     }
   }
+  delay(300);
 
   // print the message backwards (second swipe):
   // go through each letter backwards
@@ -90,5 +91,6 @@ void loop() {
       delay(increment);
     }
   }
+  delay(300);
 }
 
