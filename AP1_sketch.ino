@@ -1,6 +1,6 @@
 // VARIABLE
 // put period variable here
-int period = 10000;  // milliseconds
+int period = 2000;  // milliseconds
 // put static 2D array of
 int arr[7][7] = { {0, 62, 73, 73, 46, 0}, //G
   {0, 0, 65, 127, 65, 0, 0}, //I
